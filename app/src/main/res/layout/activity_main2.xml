@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#03A9F4"
     tools:context=".MainActivity2">
 
     <Button
@@ -11,17 +12,15 @@
         android:layout_width="373dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="19dp"
-        android:layout_marginBottom="208dp"
+        android:layout_marginBottom="230dp"
         android:backgroundTint="#000000"
         android:text="Crear cuenta"
+        android:textColor="#FFFFFF"
         app:iconTint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Sing_in" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/password_reg"
@@ -44,9 +43,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="20dp"
         android:ems="10"
-        android:hint="Introduce tu contraseña"
+        android:hint="Introduce tu correo"
         android:inputType="textLongMessage"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/correo_reg" />
 
@@ -57,7 +57,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="248dp"
         android:layout_marginEnd="205dp"
-        android:layout_marginBottom="8dp"
         android:text="CORREO ELECTRONICO"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -70,9 +69,9 @@
     <TextView
         android:id="@+id/pass_reg"
         android:layout_width="349dp"
-        android:layout_height="44dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="205dp"
         android:layout_marginBottom="8dp"
         android:text="CONTRASEÑA"
@@ -82,31 +81,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/usuatio_reg" />
 
     <EditText
         android:id="@+id/usuatio_reg"
         android:layout_width="373dp"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="185dp"
         android:layout_marginBottom="608dp"
         android:ems="10"
         android:hint="Introduce tu nombre de usuario"
         android:inputType="textShortMessage|textLongMessage|textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usu_reg"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/usu_reg"
         android:layout_width="349dp"
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="205dp"
-        android:layout_marginBottom="8dp"
         android:text="NOMBRE DE USUARIO"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -122,13 +123,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="198dp"
-        android:layout_marginBottom="47dp"
+        android:layout_marginBottom="32dp"
         android:text="Eres mayor de 16 años?"
         app:layout_constraintBottom_toTopOf="@+id/sing_up2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/correo_reg2" />
+        app:layout_constraintTop_toBottomOf="@+id/correo_reg2"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
