@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">2DAM_Grupo5</string>
+    <string name="sing_in">Sing in</string>
+    <string name="sing_up">Sing up</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="contrasenya">CONTRASEÑA</string>
+    <string name="usuario">Usuario</string>
+    <string name="user">USUARIO</string>
+    <string name="crear_cuenta">Crear cuenta</string>
+    <string name="introduce_tu_contrase_a">Introduce tu contraseña</string>
+    <string name="introduce_tu_correo">Introduce tu correo</string>
+    <string name="correo_electronico">CORREO ELECTRONICO</string>
+    <string name="contraseya">CONTRASEÑA</string>
+    <string name="introduce_tu_nombre_de_usuario">Introduce tu nombre de usuario</string>
+    <string name="nombre_de_usuario">NOMBRE DE USUARIO</string>
+    <string name="eres_mayor_de_16_a_os">Eres mayor de 16 años?</string>
 </resources>
