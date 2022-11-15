@@ -2,24 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Cab_Shop"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home">
-
-    <TextView
-        android:id="@+id/Nom_Cab"
-        android:layout_width="410dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:background="#03A8F2"
-        android:text="Nombre"
-        android:textAlignment="textStart"
-        android:textColor="#000000"
-        android:textSize="34sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".Shop">
 
     <ImageButton
         android:id="@+id/imageButton4"
@@ -56,5 +42,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/google_maps"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/Cap_Shop"
+        android:layout_width="410dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:background="#03A8F2"
+        android:text="Tienda"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Objetos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Objetos"
+        android:onClick="SwitchShop"
+        app:layout_constraintEnd_toStartOf="@+id/Plasticos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Cap_Shop" />
+
+    <Button
+        android:id="@+id/Plasticos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Plasticos"
+        android:onClick="SwitchShop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Objetos"
+        app:layout_constraintTop_toBottomOf="@+id/Cap_Shop" />
+    
+    <FrameLayout
+        android:id="@+id/contenedorFragments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

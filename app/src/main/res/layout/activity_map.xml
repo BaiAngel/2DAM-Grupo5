@@ -4,23 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home">
-
-    <TextView
-        android:id="@+id/Nom_Cab"
-        android:layout_width="410dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:background="#03A8F2"
-        android:text="Nombre"
-        android:textAlignment="textStart"
-        android:textColor="#000000"
-        android:textSize="34sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+    tools:context=".Map">
     <ImageButton
         android:id="@+id/imageButton4"
         android:layout_width="136dp"
@@ -57,4 +41,18 @@
         app:srcCompat="@drawable/google_maps"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <TextView
+        android:id="@+id/Cap_Map"
+        android:layout_width="409dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="10dp"
+        android:background="#03A8F2"
+        android:text="Mapa"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

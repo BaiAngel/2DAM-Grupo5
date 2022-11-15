@@ -7,19 +7,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class Map extends AppCompatActivity {
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-
-    public void launchSecondActivity(View view) {
-        Log.d(LOG_TAG, "Button clicked!");
-        Intent intent = new Intent(this, MainActivity2.class);
-        startActivity(intent);
+        setContentView(R.layout.activity_map);
     }
 
     public void launchHomepage(View view) {
@@ -28,4 +22,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void launchMappage(View view){
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this, Map.class);
+        startActivity(intent);
+    }
+
+    public void launchShoppage(View view){
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this, Shop.class);
+        startActivity(intent);
+    }
 }
