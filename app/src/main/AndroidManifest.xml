@@ -18,7 +18,7 @@
 
              To get one, follow the directions here:
 
-                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+                https://developers.google.com/maps/documentation/android-sdk/AIzaSyC2-GlHplmrw6BXHMlqtKjkPCXaxQ4ZGuU
 
              Once you have your API key (it starts with "AIza"), define a new property in your
              project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
@@ -26,7 +26,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="AIzaSyC2-GlHplmrw6BXHMlqtKjkPCXaxQ4ZGuU" />
 
         <activity
             android:name=".MapsActivity"
