@@ -8,32 +8,23 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class NetworkConnection {
     private static final String LOG_TAG =
             NetworkConnection.class.getSimpleName();
-    private static final String URL_SERVErNODE =
-            "https://127.0.0.1:3000/auth/user/:";
-    private static final String URL_mUser = "";
-    private static final String URL_pass = "/passwd/:";
-    private static final String URL_mPass = "";
 
     static String getLogin(String mUser, String mPass){
         HttpURLConnection urlConnection = null;
         BufferedReader reader = null;
         String loginJSONString = null;
-        mUser=URL_mUser;
-        mPass=URL_mPass;
 
         try {
-            Uri builtURI = Uri.parse(URL_SERVErNODE).buildUpon()
-                    .appendQueryParameter(URL_mUser,"")
-                    .appendQueryParameter(URL_pass,"")
-                    .appendQueryParameter(URL_mPass,"")
-                    .build();
-            URL requestURL = new URL(builtURI.toString());
+
+            String url = "https://127.0.0.1:3000/auth/user/"+mUser+"/passwd/"+mPass;
+            URL requestURL = new URL(url);
 
             urlConnection = (HttpURLConnection) requestURL.openConnection();
             urlConnection.setRequestMethod("GET");
