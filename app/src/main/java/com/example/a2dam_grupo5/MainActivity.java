@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         String pass = mPass.getText().toString();
         String userData = "";
         String passData = "";
-        new FetchUser(user, pass).execute(userData, passData);
+        //new FetchUser(user, pass).execute(userData, passData);
         TextView mUserr = (TextView) findViewById(R.id.usuatio_log);
         TextView mPasss = (TextView) findViewById(R.id.password_log);
         if (mUserr.getText().toString().equals("admin") && mPasss.getText().toString().equals("admin")||mUserr.getText().toString().equals("arnau") && mPasss.getText().toString().equals("arnau1")||mUserr.getText().toString().equals("sadfg") && mPasss.getText().toString().equals("1234")) {

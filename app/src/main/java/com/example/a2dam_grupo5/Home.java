@@ -31,7 +31,7 @@ public class Home extends AppCompatActivity {
 
     public void launchMappage(View view){
         Log.d(LOG_TAG, "Button clicked!");
-        Intent intent = new Intent(this, Map.class);
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
 

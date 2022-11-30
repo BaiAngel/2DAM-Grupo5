@@ -1,11 +1,11 @@
 package com.example.a2dam_grupo5;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.widget.FrameLayout;
+import android.widget.EditText;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -13,49 +13,55 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.example.a2dam_grupo5.databinding.ActivityMapsBinding;
 
-public class MapsActivity extends Fragment implements OnMapReadyCallback {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMapClickListener, GoogleMap.OnMapLongClickListener {
 
-    private GoogleMap mMap;
-    private ActivityMapsBinding binding;
+    EditText txtLatitud, txtLongitud;
+    GoogleMap mMap;
 
+    @SuppressLint("MissingInflatedId")
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        binding = ActivityMapsBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        txtLatitud = findViewById(R.id.txtLatitud);
+        txtLongitud = findViewById(R.id.txtLongitud);
 
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
 
-    private FragmentManager getSupportFragmentManager() {
-        return null;
-    }
-
-    private void setContentView(FrameLayout root) {
-    }
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
+        this.mMap.setOnMapClickListener(this);
+        this.mMap.setOnMapLongClickListener(this);
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng mexico = new LatLng(19.8077463,-99.4077038);
+        mMap.addMarker(new MarkerOptions().position(mexico).title("México"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(mexico));
+    }
+
+    @Override
+    public void onMapClick(@NonNull LatLng latLng) {
+        txtLatitud.setText(String.valueOf(latLng.latitude));
+        txtLongitud.setText(String.valueOf(latLng.longitude));
+
+        mMap.clear();
+        LatLng mexico = new LatLng(latLng.latitude,latLng.longitude);
+        mMap.addMarker(new MarkerOptions().position(mexico).title(""));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(mexico));
+    }
+
+    @Override
+    public void onMapLongClick(@NonNull LatLng latLng) {
+        txtLatitud.setText(String.valueOf(latLng.latitude));
+        txtLongitud.setText(String.valueOf(latLng.longitude));
+
+        mMap.clear();
+        LatLng mexico = new LatLng(latLng.latitude,latLng.longitude);
+        mMap.addMarker(new MarkerOptions().position(mexico).title(""));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(mexico));
     }
 }
